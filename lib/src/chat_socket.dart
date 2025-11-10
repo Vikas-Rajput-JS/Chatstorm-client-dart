@@ -48,7 +48,6 @@ class ChatSocket {
     _socket = IO.io(
       serverUrl,
       IO.OptionBuilder()
-          .setTransports(['websocket', 'polling'])
           .setExtraHeaders({
             'token': userId,
             'Authorization': 'Bearer $userId',
