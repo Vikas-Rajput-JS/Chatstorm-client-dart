@@ -1,0 +1,20 @@
+name: chatstorm_client
+description: A real-time chat client built using Socket.IO for Flutter applications. This client handles connection, message exchange, event-driven updates, and user session management in a modular and extensible structure.
+version: 1.0.0
+homepage: https://github.com/Vikas-Rajput-JS/Chatstorm-client-dart
+repository: https://github.com/Vikas-Rajput-JS/Chatstorm-client-dart
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=2.5.0"
+
+dependencies:
+  socket_io_client: ^2.0.3+1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
