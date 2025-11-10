@@ -21,7 +21,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  chatstorm_client: ^1.0.0
+  chatstorm_client: ^1.0.1
 ```
 
 Then run:
