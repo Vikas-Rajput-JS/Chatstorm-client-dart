@@ -9,7 +9,7 @@ class ChatSocket {
   IO.Socket? _socket;
   final String serverUrl;
   final String userId;
-  
+
   // Callbacks
   ChatCallback? _onHandshakeSuccess;
   ChatCallback? _onMessageReceived;
@@ -102,7 +102,7 @@ class ChatSocket {
     });
 
     // Reconnection failed
-    _socket!.on('reconnect_failed', () {
+    _socket!.on('reconnect_failed', (_) {
       print('[ChatSocket] ❌ Reconnection failed');
       _onErrorNotify?.call({
         'type': 'reconnect_failed',
@@ -112,7 +112,8 @@ class ChatSocket {
 
     // Reconnected successfully
     _socket!.on('reconnect', (attemptNumber) {
-      print('[ChatSocket] ✅ Reconnected successfully after $attemptNumber attempts');
+      print(
+          '[ChatSocket] ✅ Reconnected successfully after $attemptNumber attempts');
     });
   }
 
@@ -231,7 +232,8 @@ class ChatSocket {
       return;
     }
     if (!_socket!.connected) {
-      print('[ChatSocket] ❌ Cannot update typing alert: Socket is not connected');
+      print(
+          '[ChatSocket] ❌ Cannot update typing alert: Socket is not connected');
       return;
     }
     print('[ChatSocket] ⌨️ Updating typing alert: ${params.toJson()}');
@@ -273,7 +275,8 @@ class ChatSocket {
       return;
     }
     if (!_socket!.connected) {
-      print('[ChatSocket] ❌ Cannot check online status: Socket is not connected');
+      print(
+          '[ChatSocket] ❌ Cannot check online status: Socket is not connected');
       return;
     }
     print('[ChatSocket] 🟢 Checking online status: ${params.toJson()}');
@@ -368,4 +371,3 @@ class ChatSocket {
   /// Check if socket is connected
   bool get isConnected => _socket?.connected ?? false;
 }
-
